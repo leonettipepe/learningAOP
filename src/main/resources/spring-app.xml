@@ -10,17 +10,13 @@
     <context:component-scan base-package="logging"/>
     <context:component-scan base-package="objects"/>
 
+    <aop:aspectj-autoproxy/>
+
     <!--<aop:config>-->
-        <!--<aop:aspect id="log" ref="myLogger">-->
-            <!--<aop:around method="watchTime" pointcut="execution(public * *(..))"/>-->
+        <!--<aop:aspect ref="myLogger">-->
+            <!--<aop:around pointcut="execution(public * *(..))" method="watchTime" />-->
         <!--</aop:aspect>-->
     <!--</aop:config>-->
-
-    <aop:config>
-        <aop:aspect ref="myLogger">
-            <aop:around pointcut="execution(public * *(..))" method="watchTime" />
-        </aop:aspect>
-    </aop:config>
 
 
 </beans>
